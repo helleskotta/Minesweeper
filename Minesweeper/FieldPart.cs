@@ -10,10 +10,11 @@ namespace Minesweeper
         public bool IsMine { get; set; }
         public int ID { get; set; }
 
+        static Random mineCreator = new Random();
+        int theMine = mineCreator.Next(1, 4);
+
         public FieldPart()
         {
-            Random mineCreator = new Random();
-            int theMine = mineCreator.Next(1, 4);
 
             if (theMine == 1)
             {
