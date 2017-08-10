@@ -19,12 +19,12 @@ namespace Minesweeper
 
         public string DrawField()
         {
-            Width = Height = 3;
+            FieldPart[,] field = new FieldPart[Width, Height];
+            Width = Height = 10;
             Random random = new Random();
             //random.Next(0, Width);
             //random.Next(0, Height);
 
-            FieldPart[,] field = new FieldPart[Width, Height];
 
             string elementOnField = "";
             int counter = 0;
