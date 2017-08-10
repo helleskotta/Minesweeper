@@ -11,18 +11,18 @@ namespace Minesweeper
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GameField fieldPart = new GameField();
 
-
-            List<int> playField = new List<int>()
-            {
-                3, 4, 5, 6, 7, 8, 9, 10, 11
-            };
-
+            #region bortkommenterad kod
+            //List<int> playField = new List<int>()
+            //{
+            //    3, 4, 5, 6, 7, 8, 9, 10, 11
+            //};
             //foreach (int squareOnField in playField)
             //{
             //    int tempID = squareOnField;
             //    bool tempMine;
-                
+
             //    // Mine or not
             //    if (random.Next(1, 3) == 1)
             //    {
@@ -38,10 +38,9 @@ namespace Minesweeper
 
             //string elementOnField = "";
             //int counter = 0;
-            Random mine = new Random();
-            mine.Next(0, 3);
-
-
+           
+            //Random mine = new Random();
+            //mine.Next(0, 3);
             //foreach (var square in field)
             //{
             //    if (square.ID % 3 == 0)
@@ -53,8 +52,11 @@ namespace Minesweeper
             //        elementOnField += "</tr>";
             //    }
             //}
+            #endregion  
 
-            PlayField.Text = ;
+            PlayField.Text = fieldPart.DrawField();
         }
+
+
     }
 }

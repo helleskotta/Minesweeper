@@ -9,43 +9,21 @@ namespace Minesweeper
     {
         public bool IsMine { get; set; }
         public int ID { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int MineCount { get; set; }
 
-        //public int MineBeside { get; set; }
-
-        public FieldPart(bool isMine, int id)
+        public FieldPart()
         {
-            IsMine = isMine;
-            ID = id;
-        }
+            Random mineCreator = new Random();
+            int theMine = mineCreator.Next(1, 4);
 
-        public string DrawField()
-        {
-            Random random = new Random();
-            random.Next(0, Width);
-
-            random.Next(0, Height);
-
-            FieldPart[,] field = new FieldPart[Width, Height];
-
-            string elementOnField = "";
-            int counter = 0;
-
-            // Kolumn
-            for (int y = 0; y < Height; y++)
+            if (theMine == 1)
             {
-                elementOnField += "<tr>";
-
-                // Rad
-                for (int x = 0; x < Width; x++)
-                {
-                    elementOnField += $"<td style=\"border: 1px solid black;\" id=\"{counter}\" onclick=\"tdclick({counter++}, {field[x, y].IsMine});\"></td>";
-                }
-                elementOnField += "</tr>";
+                IsMine = true;
             }
-            return elementOnField;
+
+            else
+            {
+                IsMine = false;
+            }
         }
     }
 }
