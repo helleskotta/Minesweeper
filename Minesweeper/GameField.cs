@@ -31,12 +31,12 @@ namespace Minesweeper
             int counter = 0;
 
             // Kolumn
-            for (int y = 0; y < Y; y++)
+            for (int y = 1; y < Y - 1; y++)
             {
                 elementOnField += "<tr>";
 
                 // Rad
-                for (int x = 0; x < X; x++)
+                for (int x = 1; x < X - 1; x++)
                 {
                     FieldPart fieldPart = field[x, y];
 
@@ -65,6 +65,7 @@ namespace Minesweeper
 
         internal void CheckGameField(int x, int y)
         {
+
 
             if (field[x - 1, y - 1].IsMine)
             {
@@ -111,9 +112,9 @@ namespace Minesweeper
             }
 
             // TODO: Slumpa in mina 
-            field[0, 1].IsMine = true;
-            field[0, 1].IsMine = true;
-            field[0, 0].IsMine = true;
+            field[2, 1].IsMine = true;
+            field[1, 1].IsMine = true;
+            field[2, 2].IsMine = true;
         }
     }
 }

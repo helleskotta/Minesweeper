@@ -11,7 +11,7 @@ namespace Minesweeper
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GameField gameField = new GameField(10, 10);
+            GameField gameField = new GameField(12, 12);
 
             if (Session["GameField"] != null)
             {
