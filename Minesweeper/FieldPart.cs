@@ -8,6 +8,7 @@ namespace Minesweeper
     public class FieldPart
     {
         public bool IsMine { get; set; }
+        public bool IsClicked { get; set; }
         public int ID { get; set; }
         public int NumberOfNeighbourMines { get; set; }
         public int X { get; set; }
@@ -20,6 +21,7 @@ namespace Minesweeper
         {
             X = x;
             Y = y;
+            IsClicked = false;
         }
 
         public bool NeighbourChecker(int x, int y)
