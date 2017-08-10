@@ -1,16 +1,17 @@
 ﻿
-// Klickfunktion
-function tdclick(tdID) {
+// Klickfunktion bakgrundsfärg
+function tdclick(tdID, isMine) {
 
-    var mineOrNot = Math.floor(Math.random() * 3 + 1);
+    //var mineOrNot = Math.floor(Math.random() * 3 + 1);
+    var True = true;
+    var False = false;
     console.log(mineOrNot);
 
-    if (mineOrNot == 1) {
+    if (isMine) {
         $("#" + tdID).css("background", "red")
     }
 
     else{
-
         $("#" + tdID).css("background", "green")
     }
 };

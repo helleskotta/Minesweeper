@@ -11,3 +11,4 @@
         </table>
 </asp:Content>
 
+<%--<td class="{square.isMine}" id="{counter}" onclick="tdclick({counter++});"></td>--%>
