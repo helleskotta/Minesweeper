@@ -9,7 +9,6 @@ namespace Minesweeper
     {
         public int X { get; set; }
         public int Y { get; set; }
-        public int MineCount { get; set; }
         public FieldPart[,] field;
 
         //public int MineBeside { get; set; }
@@ -54,7 +53,7 @@ namespace Minesweeper
                     }
                     else
                     {
-                    elementOnField += $"<td style=\"border: 1px solid black;\" id=\"{counter}\" onclick=\"tdclick({counter++}, {fieldPart.IsMine.ToString().ToLower()}, {fieldPart.X}, {fieldPart.Y});\"></td>";
+                        elementOnField += $"<td style=\"border: 1px solid black;\" id=\"{counter}\" onclick=\"tdclick({counter++}, {fieldPart.IsMine.ToString().ToLower()}, {fieldPart.X}, {fieldPart.Y});\"></td>";
                     }
 
                 }
@@ -67,6 +66,38 @@ namespace Minesweeper
         internal void CheckGameField(int x, int y)
         {
 
+            if (field[x - 1, y - 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x - 1, y].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x - 1, y + 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x, y - 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x, y + 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x + 1, y - 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x + 1, y].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
+            if (field[x + 1, y + 1].IsMine)
+            {
+                field[x, y].MineCount++;
+            }
         }
 
         internal void BuildGamePlan()
@@ -80,7 +111,9 @@ namespace Minesweeper
             }
 
             // TODO: Slumpa in mina 
-            field[5, 5].IsMine = true;
+            field[0, 1].IsMine = true;
+            field[0, 1].IsMine = true;
+            field[0, 0].IsMine = true;
         }
     }
 }

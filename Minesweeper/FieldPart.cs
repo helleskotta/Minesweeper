@@ -13,6 +13,8 @@ namespace Minesweeper
         public int NumberOfNeighbourMines { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
+        public string Status { get; set; }
+        public int MineCount { get; set; }
 
         static Random mineCreator = new Random();
         int theMine = mineCreator.Next(1, 4);
