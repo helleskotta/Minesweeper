@@ -1,7 +1,5 @@
-﻿
-// Klickfunktion bakgrundsfärg
-function tdclick(tdID, isMine, x, y) {
-
+﻿// Klickfunktion bakgrundsfärg
+// function tdclick(tdID, isMine, x, y) {
     //var mineOrNot = Math.floor(Math.random() * 3 + 1);
     //console.log(isMine);
     //console.log(tdID);
@@ -17,5 +15,7 @@ function tdclick(tdID, isMine, x, y) {
     //else {
     //    alert("FACK");
     //}
+
+    function tdclick(tdID, isMine, x, y) {
     window.location.href = "index.aspx?action=click&x=" + x + "&y=" + y;
 }
