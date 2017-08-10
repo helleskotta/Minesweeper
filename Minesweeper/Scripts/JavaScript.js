@@ -6,11 +6,15 @@ function tdclick(tdID, isMine) {
     console.log(isMine);
     console.log(tdID);
 
-    if (isMine == 'true') {
+    if (isMine == true) {
         $("#" + tdID).css("background", "red")
     }
 
-    else{
+    else if (isMine == false){
         $("#" + tdID).css("background", "green")
+    }
+
+    else {
+        alert("FACK")
     }
 };
