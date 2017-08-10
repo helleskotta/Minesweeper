@@ -10,21 +10,16 @@ namespace Minesweeper
         public bool IsMine { get; set; }
         public int ID { get; set; }
         public int NumberOfNeighbourMines { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
         static Random mineCreator = new Random();
         int theMine = mineCreator.Next(1, 4);
 
-        public FieldPart()
+        public FieldPart(int x, int y)
         {
-            if (theMine == 1)
-            {
-                IsMine = true;
-            }
-
-            else
-            {
-                IsMine = false;
-            }
+            X = x;
+            Y = y;
         }
 
         public bool NeighbourChecker(int x, int y)
@@ -35,15 +30,7 @@ namespace Minesweeper
             }
             else
             {
-                //if (field[x + 1, y] == 1)
-                //{
-                //    NumberOfNeighbourMines += 1;
-                //}
-
-                //if (field[x - 1, y] == 1)
-                //{
-                //    NumberOfNeighbourMines += 1;
-                //}
+                
             }
             return false;
         }

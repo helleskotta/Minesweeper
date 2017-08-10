@@ -10,8 +10,30 @@ namespace Minesweeper
     public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            GameField fieldPart = new GameField();
+        {   
+            GameField fieldPart = new GameField(10, 10);
+
+            if (Session["GameField"] != null)
+            {
+                // Ladda spelplan från session
+                fieldPart.field = (FieldPart[,])Session["GameField"];
+            }
+            else
+            {
+                // Bygg ny spelplan
+                Session["GameField"] = fieldPart.field;
+            }
+
+            if (Request["action"] != null)
+            {
+                string action = Request["action"];
+
+                if (action == "click")
+                {
+                    var x = Request["x"];
+                    var y = Request["y"];
+                }
+            }
 
             #region bortkommenterad kod
             //List<int> playField = new List<int>()
@@ -38,7 +60,7 @@ namespace Minesweeper
 
             //string elementOnField = "";
             //int counter = 0;
-           
+
             //Random mine = new Random();
             //mine.Next(0, 3);
             //foreach (var square in field)
@@ -52,7 +74,7 @@ namespace Minesweeper
             //        elementOnField += "</tr>";
             //    }
             //}
-            #endregion  
+            #endregion
 
             PlayField.Text = fieldPart.DrawField();
         }
