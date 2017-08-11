@@ -15,6 +15,7 @@ namespace Minesweeper
         public int Y { get; set; }
         public string Status { get; set; }
         public int MineCount { get; set; }
+        public bool IsChecked { get; set; }
 
         static Random mineCreator = new Random();
         int theMine = mineCreator.Next(1, 4);
@@ -25,6 +26,7 @@ namespace Minesweeper
             Y = y;
             MineCount = 0;
             IsClicked = false;
+            IsChecked = false;
         }
 
         public bool NeighbourChecker(int x, int y)

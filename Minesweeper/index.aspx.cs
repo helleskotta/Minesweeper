@@ -35,9 +35,9 @@ namespace Minesweeper
 
                     if (action == "click")
                     {
-
                         gameField.field[x, y].IsClicked = true;
-                        gameField.CheckGameField(x, y);
+                        //gameField.CheckGameField(x, y);
+                        gameField.ContinueNeighbourCheck(x, y);
 
                     }
 
