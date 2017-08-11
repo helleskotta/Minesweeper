@@ -48,7 +48,7 @@ namespace Minesweeper
                         }
                         else
                         {
-                            elementOnField += $"<td style=\"background: green; border: 1px solid black;\" id=\"{counter}\" onclick=\"tdclick({counter++}, {fieldPart.IsMine.ToString().ToLower()}, {fieldPart.X}, {fieldPart.Y});\"></td>";
+                            elementOnField += $"<td style=\"background: green; border: 1px solid black;\" id=\"{counter}\" onclick=\"tdclick({counter++}, {fieldPart.IsMine.ToString().ToLower()}, {fieldPart.X}, {fieldPart.Y});\">{fieldPart.MineCount}</td>";
                         }
                     }
                     else
@@ -65,12 +65,11 @@ namespace Minesweeper
 
         internal void CheckGameField(int x, int y)
         {
-
-
             if (field[x - 1, y - 1].IsMine)
             {
                 field[x, y].MineCount++;
             }
+
             if (field[x - 1, y].IsMine)
             {
                 field[x, y].MineCount++;
@@ -99,6 +98,7 @@ namespace Minesweeper
             {
                 field[x, y].MineCount++;
             }
+            
         }
 
         internal void BuildGamePlan()

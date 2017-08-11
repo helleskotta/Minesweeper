@@ -23,6 +23,7 @@ namespace Minesweeper
         {
             X = x;
             Y = y;
+            MineCount = 0;
             IsClicked = false;
         }
 
@@ -38,5 +39,6 @@ namespace Minesweeper
             }
             return false;
         }
+        
     }
 }

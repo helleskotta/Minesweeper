@@ -26,15 +26,21 @@ namespace Minesweeper
 
             if (Request["action"] != null)
             {
-                string action = Request["action"];
+                int x = Convert.ToInt32(Request["x"]);
+                int y = Convert.ToInt32(Request["y"]);
 
-                if (action == "click")
+                if (gameField.field[x, y].IsClicked == false)
                 {
-                    int x = Convert.ToInt32(Request["x"]);
-                    int y = Convert.ToInt32(Request["y"]);
+                    string action = Request["action"];
 
-                    gameField.field[x, y].IsClicked = true;
-                    gameField.CheckGameField(x, y);
+                    if (action == "click")
+                    {
+
+                        gameField.field[x, y].IsClicked = true;
+                        gameField.CheckGameField(x, y);
+
+                    }
+
                 }
             }
 
