@@ -72,6 +72,8 @@ namespace Minesweeper
         {
             bool emptyField = true;
             int mineCount = 0;
+            // TODO: Gör en lista med field[x, y], varje gång något ändras, lägg i listan.
+            // Sätt listan till checked efter varje loop för att förhindra att countern ++ för mycket
 
             if (x > 0 && y > 0 && x < FieldX && y < FieldY)
             {

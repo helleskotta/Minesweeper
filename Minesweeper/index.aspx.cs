@@ -38,7 +38,7 @@ namespace Minesweeper
                         gameField.field[x, y].IsClicked = true;
                         //gameField.CheckGameField(x, y);
                         gameField.ContinueNeighbourCheck(x, y);
-
+                        Session["GameField"] = gameField.field;
                     }
 
                 }
