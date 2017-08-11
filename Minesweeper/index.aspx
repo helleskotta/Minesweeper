@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>MineSweeper</h1>
-    <table style="width:400px; height:400px; border: 1px solid black;">
+    <table style="width:100%; height:100%; border: 1px solid black;">
             <asp:Literal ID="PlayField" runat="server"></asp:Literal>
         </table>
 </asp:Content>
